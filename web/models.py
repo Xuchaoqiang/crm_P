@@ -44,3 +44,34 @@ class UserInfo(RbacUserInfo):
 
     def __str__(self):
         return self.nickname
+
+
+class Course(models.Model):
+    """
+    课程表
+    """
+    name = models.CharField(verbose_name="课程名称", max_length=32)
+
+    def __str__(self):
+        return self.name
+
+
+class ClassList(models.Model):
+    """
+    班级表
+    如：
+        Python全栈    面授班     5期      10000       2017-11-11      2018-5-11
+    """
+    school = models.ForeignKey(verbose_name="校区", to='School', on_delete=models.CASCADE)
+    course = models.ForeignKey(verbose_name="课程名称", to='Course', on_delete=models.CASCADE)
+    semester = models.PositiveIntegerField(verbose_name="班级(期)")
+    price = models.PositiveIntegerField(verbose_name="学费")
+    start_date = models.DateTimeField(verbose_name="开班日期")
+    graduate_date = models.DateTimeField(verbose_name="结课日期", null=True, blank=True)
+    class_teacher = models.ForeignKey(verbose_name="班主任", to=UserInfo, related_name='classes', on_delete=models.CASCADE)
+    tech_teachers = models.ManyToManyField(verbose_name="任课老师", to=UserInfo, related_name='teach_classes', null=True,
+                                           blank=True)
+    memo = models.TextField(verbose_name="说明", blank=True, null=True)
+
+    def __str__(self):
+        return "{0}（{1}期）".format(self.course.name, self.semester)

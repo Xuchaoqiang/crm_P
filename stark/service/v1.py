@@ -31,6 +31,42 @@ def get_choice_text(title, field):
     return inner
 
 
+def get_datetime_text(title, field, format='%Y-%m-%d'):
+    """
+    格式化输出时间
+    :param title: 希望页面显示的表头
+    :param field: 字段名称
+    :param format: 要显示时间的格式
+    :return:
+    """
+
+    def inner(self, obj=None, is_header=None):
+        if is_header:
+            return title
+        datetime_value = getattr(obj, field)
+        return datetime_value.strftime(format)
+
+    return inner
+
+
+def get_m2m_text(title, field):
+    """
+    对于Stark组件中定义列时，显示m2m文本信息
+    :param title: 希望页面显示的表头
+    :param field: 字段名称
+    :return:
+    """
+
+    def inner(self, obj=None, is_header=None):
+        if is_header:
+            return title
+        queryset = getattr(obj, field).all()
+        text_list = [str(row) for row in queryset]
+        return ','.join(text_list)
+
+    return inner
+
+
 class SearchGroupRow(object):
     def __init__(self, title, queryset_or_tuple, option, query_dict):
         """
@@ -155,6 +191,14 @@ class Option(object):
 class StarkModelForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(StarkModelForm, self).__init__(*args, **kwargs)
+        # 统一给ModelForm生成字段添加样式
+        for name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+
+
+class StarkForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(StarkForm, self).__init__(*args, **kwargs)
         # 统一给ModelForm生成字段添加样式
         for name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
@@ -492,13 +536,9 @@ class StarkHandler(object):
         """
         return self.get_url_name('delete')
 
-    def reverse_add_url(self):
-        """
-        生成带有原搜索条件的添加URL
-        :return:
-        """
-        name = "%s:%s" % (self.site.namespace, self.get_add_url_name,)
-        base_url = reverse(name)
+    def reverse_commons_url(self, name, *args, **kwargs):
+        name = "%s:%s" % (self.site.namespace, name,)
+        base_url = reverse(name, args=args, kwargs=kwargs)
         if not self.request.GET:
             add_url = base_url
         else:
@@ -507,6 +547,13 @@ class StarkHandler(object):
             new_query_dict['_filter'] = param
             add_url = "%s?%s" % (base_url, new_query_dict.urlencode())
         return add_url
+
+    def reverse_add_url(self, *args, **kwargs):
+        """
+        生成带有原搜索条件的添加URL
+        :return:
+        """
+        return self.reverse_commons_url(self.get_add_url_name, *args, **kwargs)
 
     def reverse_change_url(self, *args, **kwargs):
         """
@@ -515,16 +562,7 @@ class StarkHandler(object):
         :param kwargs:
         :return:
         """
-        name = "%s:%s" % (self.site.namespace, self.get_change_url_name,)
-        base_url = reverse(name, args=args, kwargs=kwargs)
-        if not self.request.GET:
-            add_url = base_url
-        else:
-            param = self.request.GET.urlencode()
-            new_query_dict = QueryDict(mutable=True)
-            new_query_dict['_filter'] = param
-            add_url = "%s?%s" % (base_url, new_query_dict.urlencode())
-        return add_url
+        return self.reverse_commons_url(self.get_change_url_name, *args, **kwargs)
 
     def reverse_delete_url(self, *args, **kwargs):
         """
@@ -533,16 +571,7 @@ class StarkHandler(object):
         :param kwargs:
         :return:
         """
-        name = "%s:%s" % (self.site.namespace, self.get_delete_url_name,)
-        base_url = reverse(name, args=args, kwargs=kwargs)
-        if not self.request.GET:
-            add_url = base_url
-        else:
-            param = self.request.GET.urlencode()
-            new_query_dict = QueryDict(mutable=True)
-            new_query_dict['_filter'] = param
-            add_url = "%s?%s" % (base_url, new_query_dict.urlencode())
-        return add_url
+        return self.reverse_commons_url(self.get_delete_url_name, *args, **kwargs)
 
     def reverse_list_url(self):
         """
