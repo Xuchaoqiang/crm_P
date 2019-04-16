@@ -10,6 +10,7 @@ from web.views.course import CourseHandler
 from web.views.class_list import ClassListHandler
 from web.views.public_customer import PublicCustomerHandler
 from web.views.private_customer import PrivateCustomerHandler
+from web.views.consult_record import ConsultHanlder
 
 site.register(models.School, SchoolHandler)
 
@@ -24,3 +25,5 @@ site.register(models.ClassList, ClassListHandler)
 site.register(models.Customer, PublicCustomerHandler, 'pub')
 
 site.register(models.Customer, PrivateCustomerHandler, 'priv')
+
+site.register(models.ConsultRecord, ConsultHanlder)

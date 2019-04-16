@@ -9,7 +9,6 @@ from django.shortcuts import HttpResponse, render, redirect
 from django.http import QueryDict
 from django import forms
 from django.db.models import Q
-from django.db.models import ForeignKey, ManyToManyField
 from stark.utils.pagination import Pagination
 from django.db.models import ForeignKey, ManyToManyField
 
@@ -205,6 +204,11 @@ class StarkForm(forms.Form):
 
 
 class StarkHandler(object):
+    change_list_template = None
+    add_template = None
+    change_template = None
+    delete_template = None
+
     list_display = []
 
     def display_checkbox(self, obj=None, is_header=None):
@@ -217,7 +221,7 @@ class StarkHandler(object):
             return "选择"
         return mark_safe('<input type="checkbox" name="pk" value="%s" />' % obj.pk)
 
-    def display_edit(self, obj=None, is_header=None):
+    def display_edit(self, obj=None, is_header=None, *args, **kwargs):
         """
         自定义页面显示的列（表头和内容）
         :param obj:
@@ -228,12 +232,12 @@ class StarkHandler(object):
             return "编辑"
         return mark_safe('<a href="%s">编辑</a>' % self.reverse_change_url(pk=obj.pk))
 
-    def display_del(self, obj=None, is_header=None):
+    def display_del(self, obj=None, is_header=None, *args, **kwargs):
         if is_header:
             return "删除"
         return mark_safe('<a href="%s">删除</a>' % self.reverse_delete_url(pk=obj.pk))
 
-    def display_edit_del(self, obj=None, is_header=None):
+    def display_edit_del(self, obj=None, is_header=None, *args, **kwargs):
         if is_header:
             return "操作"
         return mark_safe('<a href="%s">编辑</a> <a href="%s">删除</a>' % (
@@ -246,16 +250,16 @@ class StarkHandler(object):
         """
         value = []
         value.extend(self.list_display)
-        value.append(StarkHandler.display_edit_del)
+        value.append(type(self).display_edit_del)
         return value
 
     per_page_count = 10
 
     has_add_btn = True
 
-    def get_add_btn(self):
+    def get_add_btn(self, request, *args, **kwargs):
         if self.has_add_btn:
-            return "<a class='btn btn-primary' href='%s'>添加</a>" % self.reverse_add_url()
+            return "<a class='btn btn-primary' href='%s'>添加</a>" % self.reverse_add_url(*args, **kwargs)
         return None
 
     model_form_class = None
@@ -407,7 +411,7 @@ class StarkHandler(object):
             if list_display:
                 for key_or_func in list_display:
                     if isinstance(key_or_func, FunctionType):
-                        tr_list.append(key_or_func(self, row, is_header=False))
+                        tr_list.append(key_or_func(self, row, False, *args, **kwargs))
                     else:
                         tr_list.append(getattr(row, key_or_func))  # obj.gender
             else:
@@ -415,7 +419,7 @@ class StarkHandler(object):
             body_list.append(tr_list)
 
         # ########## 6. 添加按钮 #########
-        add_btn = self.get_add_btn()
+        add_btn = self.get_add_btn(request, *args, **kwargs)
 
         # ########## 7. 组合搜索 #########
         search_group_row_list = []
@@ -426,7 +430,7 @@ class StarkHandler(object):
 
         return render(
             request,
-            'stark/changelist.html',
+            self.change_list_template or 'stark/changelist.html',
             {
                 'data_list': data_list,
                 'header_list': header_list,
@@ -440,7 +444,7 @@ class StarkHandler(object):
             }
         )
 
-    def save(self, form, is_update=False):
+    def save(self, request, form, is_update, *args, **kwargs):
         """
         在使用ModelForm保存数据之前预留的钩子方法
         :param form:
@@ -458,13 +462,13 @@ class StarkHandler(object):
         model_form_class = self.get_model_form_class(is_add=True)
         if request.method == 'GET':
             form = model_form_class()
-            return render(request, 'stark/change.html', {'form': form})
+            return render(request, self.add_template or 'stark/change.html', {'form': form})
         form = model_form_class(data=request.POST)
         if form.is_valid():
-            self.save(form, is_update=False)
+            self.save(request, form, False, *args, **kwargs)
             # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
-            return redirect(self.reverse_list_url())
-        return render(request, 'stark/change.html', {'form': form})
+            return redirect(self.reverse_list_url(*args, **kwargs))
+        return render(request, self.add_template or 'stark/change.html', {'form': form})
 
     def change_view(self, request, pk, *args, **kwargs):
         """
@@ -480,13 +484,13 @@ class StarkHandler(object):
         model_form_class = self.get_model_form_class()
         if request.method == 'GET':
             form = model_form_class(instance=current_change_object)
-            return render(request, 'stark/change.html', {'form': form})
+            return render(request, self.change_template or 'stark/change.html', {'form': form})
         form = model_form_class(data=request.POST, instance=current_change_object)
         if form.is_valid():
-            self.save(form, is_update=False)
+            self.save(request, form, True, *args, **kwargs)
             # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
-            return redirect(self.reverse_list_url())
-        return render(request, 'stark/change.html', {'form': form})
+            return redirect(self.reverse_list_url(*args, **kwargs))
+        return render(request, self.change_template or 'stark/change.html', {'form': form})
 
     def delete_view(self, request, pk, *args, **kwargs):
         """
@@ -495,9 +499,9 @@ class StarkHandler(object):
         :param pk:
         :return:
         """
-        origin_list_url = self.reverse_list_url()
+        origin_list_url = self.reverse_list_url(*args, **kwargs)
         if request.method == 'GET':
-            return render(request, 'stark/delete.html', {'cancel': origin_list_url})
+            return render(request, self.delete_template or 'stark/delete.html', {'cancel': origin_list_url})
 
         self.model_class.objects.filter(pk=pk).delete()
         return redirect(origin_list_url)
@@ -509,7 +513,7 @@ class StarkHandler(object):
         return '%s_%s_%s' % (app_label, model_name, param,)
 
     @property
-    def get_list_url_name(self):
+    def get_list_url_name(self, *args, **kwargs):
         """
         获取列表页面URL的name
         :return:
@@ -525,7 +529,7 @@ class StarkHandler(object):
         return self.get_url_name('add')
 
     @property
-    def get_change_url_name(self):
+    def get_change_url_name(self, *args, **kwargs):
         """
         获取修改页面URL的name
         :return:
@@ -533,7 +537,7 @@ class StarkHandler(object):
         return self.get_url_name('change')
 
     @property
-    def get_delete_url_name(self):
+    def get_delete_url_name(self, *args, **kwargs):
         """
         获取删除页面URL的name
         :return:
@@ -577,13 +581,13 @@ class StarkHandler(object):
         """
         return self.reverse_commons_url(self.get_delete_url_name, *args, **kwargs)
 
-    def reverse_list_url(self):
+    def reverse_list_url(self, *args, **kwargs):
         """
         跳转回列表页面时，生成URL
         :return:
         """
         name = "%s:%s" % (self.site.namespace, self.get_list_url_name,)
-        base_url = reverse(name)
+        base_url = reverse(name, args=args, kwargs=kwargs)
         param = self.request.GET.get('_filter')
         if not param:
             return base_url
