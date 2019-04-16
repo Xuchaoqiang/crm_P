@@ -26,3 +26,5 @@ class ClassListHandler(StarkHandler):
 
     list_display = ['school', display_course, 'price', get_datetime_text('开课日期', 'start_date'), 'class_teacher',
                     get_m2m_text('任课老师', 'tech_teachers')]
+
+    model_form_class = ClassListModelForm

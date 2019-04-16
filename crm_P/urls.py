@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from stark.service.v1 import site
+from web.views import account
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('stark/', site.urls)
+    path('stark/', site.urls),
+    path('login/', account.login, name='login'),
+    path('logout/', account.logout, name='logout'),
+    path('index/', account.index, name='index')
 ]
