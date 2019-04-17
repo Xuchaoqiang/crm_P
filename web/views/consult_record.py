@@ -5,6 +5,7 @@ from django.conf.urls import url
 from stark.service.v1 import StarkHandler, StarkModelForm
 from web import models
 from django.utils.safestring import mark_safe
+from django.shortcuts import HttpResponse
 
 
 class ConsultRecordModelForm(StarkModelForm):
@@ -43,15 +44,36 @@ class ConsultHanlder(StarkHandler):
 
     def get_queryset(self, request, *args, **kwargs):
         customer_id = kwargs.get('customer_id')
-        print(customer_id)
         current_user_id = request.session['user_info']['id']
-        print(current_user_id)
         return self.model_class.objects.filter(customer_id=customer_id, customer__consultant_id=current_user_id)
 
     def save(self, request, form, is_update, *args, **kwargs):
+        customer_id = kwargs.get('customer_id')
+        current_user_id = request.session['user_info']['id']
+
+        object_exists = models.Customer.objects.filter(id=customer_id,
+                                                       consultant=current_user_id).exists()
+        if not object_exists:
+            return HttpResponse('非法操作！')
+
         if not is_update:
-            customer_id = kwargs.get('customer_id')
-            current_user_id = request.session['user_info']['id']
             form.instance.customer_id = customer_id
             form.instance.consultant_id = current_user_id
         form.save()
+
+    def get_change_object(self, request, pk, *args, **kwargs):
+        customer_id = kwargs.get('customer_id')
+        current_user_id = request.session['user_info']['id']
+        return self.model_class.objects.filter(pk=pk, customer_id=customer_id,
+                                               customer__consultant_id=current_user_id).first()
+
+    def delete_object(self, request, pk, *args, **kwargs):
+        customer_id = kwargs.get('customer_id')
+        current_user_id = request.session['user_info']['id']
+
+        record_queryset = models.ConsultRecord.objects.filter(pk=pk, customer_id=customer_id,
+                                                              customer__consultant_id=current_user_id)
+
+        if not record_queryset.exists():
+            return HttpResponse("要删除的记录不存在，请重新选择")
+        record_queryset.delete()

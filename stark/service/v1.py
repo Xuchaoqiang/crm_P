@@ -465,10 +465,13 @@ class StarkHandler(object):
             return render(request, self.add_template or 'stark/change.html', {'form': form})
         form = model_form_class(data=request.POST)
         if form.is_valid():
-            self.save(request, form, False, *args, **kwargs)
+            response = self.save(request, form, False, *args, **kwargs)
             # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
-            return redirect(self.reverse_list_url(*args, **kwargs))
+            return response or redirect(self.reverse_list_url(*args, **kwargs))
         return render(request, self.add_template or 'stark/change.html', {'form': form})
+
+    def get_change_object(self, request, pk, *args, **kwargs):
+        return self.model_class.objects.filter(pk=pk).first()
 
     def change_view(self, request, pk, *args, **kwargs):
         """
@@ -477,7 +480,7 @@ class StarkHandler(object):
         :param pk:
         :return:
         """
-        current_change_object = self.model_class.objects.filter(pk=pk).first()
+        current_change_object = self.get_change_object(request, pk, *args, **kwargs)
         if not current_change_object:
             return HttpResponse('要修改的数据不存在，请重新选择！')
 
@@ -487,10 +490,13 @@ class StarkHandler(object):
             return render(request, self.change_template or 'stark/change.html', {'form': form})
         form = model_form_class(data=request.POST, instance=current_change_object)
         if form.is_valid():
-            self.save(request, form, True, *args, **kwargs)
+            response = self.save(request, form, True, *args, **kwargs)
             # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
-            return redirect(self.reverse_list_url(*args, **kwargs))
+            return response or redirect(self.reverse_list_url(*args, **kwargs))
         return render(request, self.change_template or 'stark/change.html', {'form': form})
+
+    def delete_object(self, request, pk, *args, **kwargs):
+        self.model_class.objects.filter(pk=pk).delete()
 
     def delete_view(self, request, pk, *args, **kwargs):
         """
@@ -503,8 +509,8 @@ class StarkHandler(object):
         if request.method == 'GET':
             return render(request, self.delete_template or 'stark/delete.html', {'cancel': origin_list_url})
 
-        self.model_class.objects.filter(pk=pk).delete()
-        return redirect(origin_list_url)
+        response = self.delete_object(request, pk, *args, **kwargs)
+        return response or redirect(origin_list_url)
 
     def get_url_name(self, param):
         app_label, model_name = self.model_class._meta.app_label, self.model_class._meta.model_name
@@ -521,7 +527,7 @@ class StarkHandler(object):
         return self.get_url_name('list')
 
     @property
-    def get_add_url_name(self):
+    def get_add_url_name(self, *args, **kwargs):
         """
         获取添加页面URL的name
         :return:

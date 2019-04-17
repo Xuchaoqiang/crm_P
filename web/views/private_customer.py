@@ -18,10 +18,16 @@ class PrivateCustomerHandler(StarkHandler):
         if is_header:
             return "跟进记录"
         record_url = reverse('stark:web_consultrecord_list', kwargs={'customer_id': obj.pk})
-        return mark_safe('<a target="_blank" href="%s">查看跟进</a>' % record_url)
+        return mark_safe('<a target="_blank" href="%s">跟进</a>' % record_url)
+
+    def display_pay_record(self, obj=None, is_header=None):
+        if is_header:
+            return "缴费记录"
+        record_url = reverse('stark:web_paymentrecord_list', kwargs={'customer_id': obj.pk})
+        return mark_safe('<a target="_blank" href="%s">缴费</a>' % record_url)
 
     list_display = [StarkHandler.display_checkbox, 'name', 'qq', get_m2m_text('咨询课程', 'course'), display_record,
-                    get_choice_text('状态', 'status')]
+                    display_pay_record, get_choice_text('状态', 'status')]
 
     def get_queryset(self, request, *args, **kwargs):
         current_user_id = request.session['user_info']['id']
