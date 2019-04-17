@@ -227,7 +227,18 @@ class Student(models.Model):
         (4, "退学")
     ]
     student_status = models.IntegerField(verbose_name="学员状态", choices=student_status_chocies, default=1)
+    score = models.IntegerField(verbose_name='积分', default=100)
     memo = models.CharField(verbose_name="备注", max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.customer.name
+
+
+class ScoreRecord(models.Model):
+    """
+    积分记录
+    """
+    student = models.ForeignKey(verbose_name="学生", to='Student', on_delete=models.CASCADE)
+    content = models.TextField(verbose_name="理由")
+    score = models.IntegerField(verbose_name="分值", help_text='违纪扣分写负值，加分写正值')
+    user = models.ForeignKey(verbose_name="执行人", to='UserInfo', on_delete=models.CASCADE)

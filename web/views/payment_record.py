@@ -13,6 +13,16 @@ class PaymentRecordModelForm(StarkModelForm):
         fields = ['pay_type', 'paid_fee', 'class_list', 'note']
 
 
+class StudentPaymentRecordModelForm(StarkModelForm):
+    qq = forms.CharField(label='QQ号', max_length=32)
+    mobile = forms.CharField(label='手机号', max_length=32)
+    emergency_contract = forms.CharField(label='紧急联系人电话', max_length=32)
+
+    class Meta:
+        model = models.PaymentRecord
+        fields = ['pay_type', 'paid_fee', 'class_list', 'qq', 'mobile', 'emergency_contract', 'note']
+
+
 class PaymentRecordHandler(StarkHandler):
     list_display = [get_choice_text('缴费类型', 'pay_type'), 'paid_fee', 'class_list', 'consultant',
                     get_choice_text('状态', 'confirm_status')]
@@ -52,4 +62,26 @@ class PaymentRecordHandler(StarkHandler):
 
         form.instance.customer_id = customer_id
         form.instance.consultant_id = current_user_id
+        # 创建缴费记录信息
         form.save()
+
+        # 创建学员信息
+        class_list = form.cleaned_data['class_list']
+        fetch_student_object = models.Student.objects.filter(customer_id=customer_id).first()
+        if not fetch_student_object:
+            qq = form.cleaned_data['qq']
+            mobile = form.cleaned_data['mobile']
+            emergency_contract = form.cleaned_data['emergency_contract']
+            student_obj = models.Student.objects.create(customer_id=customer_id, qq=qq, mobile=mobile,
+                                                        emergency_contract=emergency_contract)
+            student_obj.class_list.add(class_list)
+        else:
+            fetch_student_object.class_list.add(class_list.id)
+
+    def get_model_form_class(self, is_add, request, pk, *args, **kwargs):
+        # 如果当前客户有学生信息，则使用PaymentRecordModelForm；否则使用StudentPaymentRecordModelForm
+        customer_id = kwargs.get('customer_id')
+        student_exists = models.Student.objects.filter(customer_id=customer_id).exists()
+        if student_exists:
+            return PaymentRecordModelForm
+        return StudentPaymentRecordModelForm

@@ -21,7 +21,7 @@ def get_choice_text(title, field):
     :return:
     """
 
-    def inner(self, obj=None, is_header=None):
+    def inner(self, obj=None, is_header=None, *args, **kwargs):
         if is_header:
             return title
         method = "get_%s_display" % field
@@ -264,7 +264,7 @@ class StarkHandler(object):
 
     model_form_class = None
 
-    def get_model_form_class(self, is_add=False):
+    def get_model_form_class(self, is_add, request, pk, *args, **kwargs):
         """
         定制添加和编辑页面的model_form的定制
         :param is_add:
@@ -459,7 +459,7 @@ class StarkHandler(object):
         :param request:
         :return:
         """
-        model_form_class = self.get_model_form_class(is_add=True)
+        model_form_class = self.get_model_form_class(True, request, None, *args, **kwargs)
         if request.method == 'GET':
             form = model_form_class()
             return render(request, self.add_template or 'stark/change.html', {'form': form})
@@ -484,7 +484,7 @@ class StarkHandler(object):
         if not current_change_object:
             return HttpResponse('要修改的数据不存在，请重新选择！')
 
-        model_form_class = self.get_model_form_class()
+        model_form_class = self.get_model_form_class(False, request, pk, *args, **kwargs)
         if request.method == 'GET':
             form = model_form_class(instance=current_change_object)
             return render(request, self.change_template or 'stark/change.html', {'form': form})
