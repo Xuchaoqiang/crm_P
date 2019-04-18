@@ -10,6 +10,7 @@ from web.utils.hash_md5 import gen_md5
 from django.conf.urls import url
 from django.utils.safestring import mark_safe
 from django.shortcuts import HttpResponse, render, redirect
+from .base import PermissionHandler
 
 
 class UserInfoAddModelForm(StarkModelForm):
@@ -20,14 +21,16 @@ class UserInfoAddModelForm(StarkModelForm):
         fields = ['name', 'password', 'confirm_password', 'nickname', 'gender', 'phone', 'email', 'depart', 'roles']
 
     def clean_confirm_password(self):
-        password = self.cleaned_data['password']
+        password = self.cleaned_data.get('password')
         confirm_password = self.cleaned_data['confirm_password']
+
         if password != confirm_password:
             raise ValidationError('密码输入不一致')
         return confirm_password
 
     def clean(self):
-        password = self.cleaned_data['password']
+
+        password = self.cleaned_data.get('password')
         self.cleaned_data['password'] = gen_md5(password)
         return self.cleaned_data
 
@@ -55,7 +58,7 @@ class ResetPasswordForm(StarkForm):
         return self.cleaned_data
 
 
-class UserInfoHandler(StarkHandler):
+class UserInfoHandler(PermissionHandler, StarkHandler):
 
     def display_reset_pwd(self, obj=None, is_header=None):
         if is_header:
@@ -72,7 +75,7 @@ class UserInfoHandler(StarkHandler):
         Option(field='depart'),
     ]
 
-    def get_model_form_class(self, is_add=False):
+    def get_model_form_class(self, is_add, request, pk, *args, **kwargs):
         if is_add:
             return UserInfoAddModelForm
         return UserInfoChangeModelForm

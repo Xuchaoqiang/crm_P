@@ -4,16 +4,17 @@
 
 from django.conf.urls import url
 from stark.service.v1 import StarkHandler, get_choice_text, get_datetime_text
+from .base import PermissionHandler
 
 
-class CheckPaymentRecordHandler(StarkHandler):
+class CheckPaymentRecordHandler(PermissionHandler, StarkHandler):
     order_list = ['confirm_status']
 
     list_display = [StarkHandler.display_checkbox, 'customer', get_choice_text('缴费类型', 'pay_type'), 'paid_fee',
                     'class_list', get_datetime_text('申请日期', 'apply_date'),
                     get_choice_text('状态', 'confirm_status'), 'consultant']
 
-    def get_list_display(self):
+    def get_list_display(self, request, *args, **kwargs):
         value = []
         if self.list_display:
             value.extend(self.list_display)

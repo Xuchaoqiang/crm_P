@@ -5,6 +5,7 @@ from django.shortcuts import HttpResponse
 from django import forms
 from stark.service.v1 import StarkHandler, get_choice_text, StarkModelForm
 from web import models
+from .base import PermissionHandler
 
 
 class PaymentRecordModelForm(StarkModelForm):
@@ -23,13 +24,13 @@ class StudentPaymentRecordModelForm(StarkModelForm):
         fields = ['pay_type', 'paid_fee', 'class_list', 'qq', 'mobile', 'emergency_contract', 'note']
 
 
-class PaymentRecordHandler(StarkHandler):
+class PaymentRecordHandler(PermissionHandler, StarkHandler):
     list_display = [get_choice_text('缴费类型', 'pay_type'), 'paid_fee', 'class_list', 'consultant',
                     get_choice_text('状态', 'confirm_status')]
 
     model_form_class = PaymentRecordModelForm
 
-    def get_list_display(self):
+    def get_list_display(self, request, *args, **kwargs):
         """
         获取页面上应该显示的列，预留的自定义扩展，例如：以后根据用户的不同显示不同的列
         :return:

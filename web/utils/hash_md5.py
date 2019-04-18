@@ -10,6 +10,7 @@ def gen_md5(origin):
     :param origin:
     :return:
     """
-    ha = hashlib.md5()
-    ha.update(origin.encode('utf-8'))
-    return ha.hexdigest()
+    if origin:
+        ha = hashlib.md5()
+        ha.update(origin.encode('utf-8'))
+        return ha.hexdigest()

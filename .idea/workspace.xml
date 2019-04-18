@@ -2,18 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29adf2cf-51f4-407b-9679-d8c0ecc41304" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/621d21a6-a86e-4729-913d-5378b6edee0a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/726b0e92-ca18-4abf-abcb-3faa238f4684.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/78139d55-3c97-4060-9ca0-da9ae327c95f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e41446ec-a6e9-49ec-b9ea-962a11f32651.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crm_P/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm_P/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crm_P/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm_P/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbac/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbac/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stark/service/v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/stark/service/v1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stark/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/stark/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/stark.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/stark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/utils/hash_md5.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/utils/hash_md5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/check_payment_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/check_payment_record.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/views/class_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/class_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/consult_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/consult_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/course.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/course_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/course_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/depart.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/depart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/payment_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/payment_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/private_customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/private_customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/public_customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/public_customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/school.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/school.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/score_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/score_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/userinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/userinfo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -108,47 +121,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crm_P/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="127" column="14" lean-forward="true" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/stark/templates/layout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web_userinfo" pinned="false" current-in-tab="false">
-        <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_userinfo">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbac/templates/layout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="140" selection-start-line="140" selection-end-line="141" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="account.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/account.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+            <state relative-caret-position="209">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding>
                 <element signature="e#46#105#0" expanded="true" />
               </folding>
@@ -156,35 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crm_P/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-              <folding>
-                <element signature="e#629#670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbac/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbac/views/menu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="367" column="36" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="36" />
-              <folding>
-                <element signature="e#45#80#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="web_userinfo" pinned="false" current-in-tab="true">
+        <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_userinfo">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -194,8 +147,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -204,10 +157,12 @@
       <find>rel</find>
       <find>is_header</find>
       <find>regis</find>
-      <find>get_model_form_class</find>
       <find>type</find>
       <find>get_urls</find>
       <find>string</find>
+      <find>get_add_btn</find>
+      <find>get_list_display</find>
+      <find>get_model_form_class</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,35 +173,43 @@
       <list>
         <option value="$PROJECT_DIR$/rbac/models.py" />
         <option value="$PROJECT_DIR$/rbac/service/routes.py" />
-        <option value="$PROJECT_DIR$/web/utils/hash_md5.py" />
-        <option value="$PROJECT_DIR$/web/views/school.py" />
-        <option value="$PROJECT_DIR$/web/views/depart.py" />
-        <option value="$PROJECT_DIR$/web/views/userinfo.py" />
-        <option value="$PROJECT_DIR$/web/views/course.py" />
         <option value="$PROJECT_DIR$/stark/forms/stark/widgets.py" />
         <option value="$PROJECT_DIR$/stark/forms/widgets.py" />
         <option value="$PROJECT_DIR$/stark/templates/stark/forms/widgets/datetime_picker.html" />
         <option value="$PROJECT_DIR$/web/templates/index.html" />
-        <option value="$PROJECT_DIR$/web/views/public_customer.py" />
         <option value="$PROJECT_DIR$/web/templates/consult_record.html" />
         <option value="$PROJECT_DIR$/web/templates/record_view.html" />
-        <option value="$PROJECT_DIR$/web/views/consult_record.py" />
-        <option value="$PROJECT_DIR$/web/views/private_customer.py" />
-        <option value="$PROJECT_DIR$/web/views/payment_record.py" />
-        <option value="$PROJECT_DIR$/web/views/check_payment_record.py" />
-        <option value="$PROJECT_DIR$/web/views/score_record.py" />
-        <option value="$PROJECT_DIR$/web/views/student.py" />
         <option value="$PROJECT_DIR$/web/stark.py" />
-        <option value="$PROJECT_DIR$/web/views/class_list.py" />
         <option value="$PROJECT_DIR$/web/models.py" />
-        <option value="$PROJECT_DIR$/stark/service/v1.py" />
-        <option value="$PROJECT_DIR$/web/views/course_record.py" />
         <option value="$PROJECT_DIR$/web/templates/attendance.html" />
         <option value="$PROJECT_DIR$/crm_P/urls.py" />
         <option value="$PROJECT_DIR$/rbac/urls.py" />
-        <option value="$PROJECT_DIR$/web/views/account.py" />
-        <option value="$PROJECT_DIR$/crm_P/settings.py" />
         <option value="$PROJECT_DIR$/stark/templates/layout.html" />
+        <option value="$PROJECT_DIR$/web/views/base.py" />
+        <option value="$PROJECT_DIR$/web/views/check_payment_record.py" />
+        <option value="$PROJECT_DIR$/web/views/class_list.py" />
+        <option value="$PROJECT_DIR$/web/views/course.py" />
+        <option value="$PROJECT_DIR$/web/views/consult_record.py" />
+        <option value="$PROJECT_DIR$/web/views/course_record.py" />
+        <option value="$PROJECT_DIR$/web/views/depart.py" />
+        <option value="$PROJECT_DIR$/web/views/payment_record.py" />
+        <option value="$PROJECT_DIR$/web/views/private_customer.py" />
+        <option value="$PROJECT_DIR$/web/views/public_customer.py" />
+        <option value="$PROJECT_DIR$/web/views/school.py" />
+        <option value="$PROJECT_DIR$/web/views/student.py" />
+        <option value="$PROJECT_DIR$/stark/service/v1.py" />
+        <option value="$PROJECT_DIR$/web/views/score_record.py" />
+        <option value="$PROJECT_DIR$/web/views/userinfo.py" />
+        <option value="$PROJECT_DIR$/web/utils/hash_md5.py" />
+        <option value="$PROJECT_DIR$/web/templates/plugins.html" />
+        <option value="$PROJECT_DIR$/web/templates/plugins/login_p/login.html" />
+        <option value="$PROJECT_DIR$/web/templates/web-plugins/login_p/login.html" />
+        <option value="$PROJECT_DIR$/web/static/web-plugins/login_p/login.html" />
+        <option value="$PROJECT_DIR$/crm_P/settings.py" />
+        <option value="$PROJECT_DIR$/web/templates/login.html" />
+        <option value="$PROJECT_DIR$/web/plugs/login_p/login.html" />
+        <option value="$PROJECT_DIR$/web/views/account.py" />
+        <option value="$PROJECT_DIR$/web/templates/login2.html" />
       </list>
     </option>
   </component>
@@ -260,10 +223,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -273,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,46 +247,43 @@
             <path>
               <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
               <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
-              <item name="apps.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="stark" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
-              <item name="stark" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
               <item name="crm_P" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="plugs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="plugs" type="462c0819:PsiDirectoryNode" />
+              <item name="login_p" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="plugs" type="462c0819:PsiDirectoryNode" />
+              <item name="login_p" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crm_P" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crm_P" type="b2602c69:ProjectViewProjectNode" />
@@ -334,7 +295,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,14 +307,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.CVS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\crazy\PycharmProjects\crm_P\web\templates" />
-      <recent name="C:\Users\Xuuuuuu\PycharmProjects\crm_P\stark\templates\stark" />
-      <recent name="C:\Users\Xuuuuuu\PycharmProjects\crm_P\stark\static\stark\plugins" />
-      <recent name="C:\Users\crazy\PycharmProjects\crm_P" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\py_objects\crm_P\web\static" />
       <recent name="C:\Users\Xuuuuuu\PycharmProjects\crm_P\stark\forms" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\py_objects\crm_P\web" />
+      <recent name="H:\py_objects\crm_P\web\templates" />
+      <recent name="H:\py_objects\crm_P\web\plugs" />
+      <recent name="H:\py_objects\crm_P\web\templates\plugins" />
+      <recent name="C:\Users\crazy\PycharmProjects\crm_P\web\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -384,7 +346,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
+      <option name="port" value="8005" />
       <option name="host" value="" />
       <option name="additionalOptions" value="--noreload" />
       <option name="browserUrl" value="" />
@@ -408,31 +370,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22008863" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49946696" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="13" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32212028" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.25611052" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3294964" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49785408" visible="true" weight="0.21041666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49785408" visible="true" weight="0.18297587" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1734375" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.21782842" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.50214595" side_tool="true" weight="0.24949153" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" sideWeight="0.50214595" side_tool="true" weight="0.24949153" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3294964" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293944" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,221 +403,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/forms/templates/django/forms/widgets/text.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/forms/templates/django/forms/widgets/input.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/forms/__init__.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/forms/widgets.py" />
-    <entry file="file://$PROJECT_DIR$/stark/templates/stark/forms/widgets/datetime_picker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stark/forms/widgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="62" lean-forward="true" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://84534b54-45a0-4947-84c4-f0164df98da0/schema/main/table/web_userinfo" />
-    <entry file="das://84534b54-45a0-4947-84c4-f0164df98da0/schema/main/table/web_consultrecord" />
-    <entry file="das://84534b54-45a0-4947-84c4-f0164df98da0/schema/main/table/web_customer" />
-    <entry file="file://$PROJECT_DIR$/web/views/course.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/userinfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="84" column="16" lean-forward="true" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/login.html" />
-    <entry file="file://$PROJECT_DIR$/web/templates/index.html" />
-    <entry file="file://$PROJECT_DIR$/stark/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/public_customer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="47" column="42" lean-forward="true" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/consult_record.html" />
-    <entry file="das://8220a1b2-662c-4a01-99a5-6b38f6e9dcfe/schema/main/table/web_customer_course" />
-    <entry file="das://8220a1b2-662c-4a01-99a5-6b38f6e9dcfe/schema/main/table/web_customer" />
-    <entry file="das://8220a1b2-662c-4a01-99a5-6b38f6e9dcfe/schema/main/table/web_consultrecord" />
-    <entry file="das://e41446ec-a6e9-49ec-b9ea-962a11f32651/schema/main/table/web_consultrecord" />
-    <entry file="file://$PROJECT_DIR$/web/templates/record_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="108" lean-forward="true" selection-start-line="10" selection-start-column="108" selection-end-line="10" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/core/handlers/base.py" />
-    <entry file="das://e41446ec-a6e9-49ec-b9ea-962a11f32651/schema/main/table/web_customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/private_customer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="41" column="60" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/school.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/consult_record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-919">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/depart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_paymentrecord">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_student">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/payment_record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="69" column="74" lean-forward="true" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/student.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#62#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_department">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_department">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_studyrecord">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stark/service/v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="219" column="21" lean-forward="true" selection-start-line="219" selection-start-column="21" selection-end-line="219" selection-end-column="21" />
-          <folding>
-            <element signature="e#45#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="261" column="10" lean-forward="true" selection-start-line="261" selection-start-column="10" selection-end-line="261" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://e41446ec-a6e9-49ec-b9ea-962a11f32651/schema/main/table/web_customer" />
+    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_paymentrecord" />
+    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_student" />
+    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_customer" />
+    <entry file="das://726b0e92-ca18-4abf-abcb-3faa238f4684/schema/main/table/web_department" />
+    <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_department" />
+    <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_studyrecord" />
     <entry file="file://$PROJECT_DIR$/web/stark.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#46#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/score_record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="e#62#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/class_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/check_payment_record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/course_record.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="67" column="41" lean-forward="true" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <element signature="e#45#77#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,10 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
           <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-          <folding>
-            <element signature="e#200#221#0#HTML" expanded="true" />
-            <element signature="e#753#771#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,59 +433,247 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rbac/views/menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="6783">
           <caret line="367" column="36" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="36" />
-          <folding>
-            <element signature="e#45#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm_P/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding>
-            <element signature="e#629#670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
-          <folding>
-            <element signature="e#46#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm_P/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="127" column="14" lean-forward="true" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbac/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="2660">
           <caret line="140" selection-start-line="140" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_userinfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stark/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/check_payment_record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-627">
+          <caret line="6" selection-start-line="6" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/class_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/consult_record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/course_record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1444">
+          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/depart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/public_customer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-893">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/school.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/score_record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://78139d55-3c97-4060-9ca0-da9ae327c95f/schema/main/table/web_userinfo" />
+    <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_paymentrecord">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/student.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="43" column="20" lean-forward="true" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/private_customer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-370">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/payment_record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-707">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_userinfo_roles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_customer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="259" column="32" lean-forward="true" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stark/service/v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="333" selection-start-line="333" selection-end-line="333" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_student">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/utils/hash_md5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/userinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/plugins.html" />
+    <entry file="file://$PROJECT_DIR$/web/static/web-plugins/login_p/js/index.js" />
+    <entry file="file://$PROJECT_DIR$/web/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="6" column="60" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/web-plugins/login_p/login.html" />
+    <entry file="file://$PROJECT_DIR$/crm_P/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/plugs/login_p/js/index.js" />
+    <entry file="file://$PROJECT_DIR$/web/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm_P/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm_P/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/plugs/login_p/login.html" />
+    <entry file="file://$PROJECT_DIR$/web/static/plugs/login_p/js/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/login2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding>
+            <element signature="e#46#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_department">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1b2f9f0d-8bd7-49ee-a9f5-f854279d1ce7/schema/main/table/web_userinfo">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

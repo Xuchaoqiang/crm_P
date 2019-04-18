@@ -4,6 +4,7 @@ from stark.service.v1 import StarkHandler, get_m2m_text, get_choice_text, StarkM
 from web import models
 from django.utils.safestring import mark_safe
 from django.shortcuts import reverse
+from .base import PermissionHandler
 
 
 class PrivateCustomerModelForm(StarkModelForm):
@@ -12,7 +13,7 @@ class PrivateCustomerModelForm(StarkModelForm):
         exclude = ['consultant', ]
 
 
-class PrivateCustomerHandler(StarkHandler):
+class PrivateCustomerHandler(PermissionHandler, StarkHandler):
 
     def display_record(self, obj=None, is_header=None):
         if is_header:

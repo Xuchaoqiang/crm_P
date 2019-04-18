@@ -8,6 +8,7 @@ from django.shortcuts import HttpResponse
 from django.urls import reverse
 from django.forms.models import modelformset_factory
 from django.shortcuts import render
+from .base import PermissionHandler
 
 
 class CourseRecordModelForm(StarkModelForm):
@@ -16,7 +17,7 @@ class CourseRecordModelForm(StarkModelForm):
         fields = ['day_num', 'teacher']
 
 
-class StudyRecordModelForm(StarkModelForm):
+class StudyRecordModelForm(PermissionHandler, StarkModelForm):
     class Meta:
         model = models.StudyRecord
         fields = ['record', ]

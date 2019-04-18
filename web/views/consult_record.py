@@ -6,6 +6,7 @@ from stark.service.v1 import StarkHandler, StarkModelForm
 from web import models
 from django.utils.safestring import mark_safe
 from django.shortcuts import HttpResponse
+from .base import PermissionHandler
 
 
 class ConsultRecordModelForm(StarkModelForm):
@@ -14,7 +15,7 @@ class ConsultRecordModelForm(StarkModelForm):
         fields = ['note', ]
 
 
-class ConsultHanlder(StarkHandler):
+class ConsultHanlder(PermissionHandler, StarkHandler):
     change_list_template = 'consult_record.html'
 
     model_form_class = ConsultRecordModelForm

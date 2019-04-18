@@ -4,9 +4,10 @@
 
 from web import models
 from stark.service.v1 import site, StarkHandler
+from .base import PermissionHandler
 
 
-class DepartmentHandler(StarkHandler):
+class DepartmentHandler(PermissionHandler, StarkHandler):
     list_display = ['title', ]
 
 

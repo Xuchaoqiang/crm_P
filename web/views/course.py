@@ -3,7 +3,8 @@
 # Author:Irving
 
 from stark.service.v1 import StarkHandler
+from .base import PermissionHandler
 
 
-class CourseHandler(StarkHandler):
+class CourseHandler(PermissionHandler, StarkHandler):
     list_display = ['name', ]
