@@ -4,6 +4,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from web import models
 from web.utils.hash_md5 import gen_md5
+from rbac.service.init_permission import init_permission
 
 
 def login(request):
@@ -23,6 +24,8 @@ def login(request):
     if not user:
         return render(request, 'login.html', {'msg': '用户名或密码错误'})
     request.session['user_info'] = {'id': user.id, 'nickname': user.nickname}
+    # 用户权限信息的初始化
+    init_permission(user, request)
 
     return redirect('/index/')
 

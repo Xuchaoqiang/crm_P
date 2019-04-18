@@ -6,6 +6,7 @@ from rbac.views import role
 from rbac.views import user
 from rbac.views import menu
 
+app_name = 'rbac'
 urlpatterns = [
 
     url(r'^role/list/$', role.role_list, name='role_list'),  # rbac:role_list

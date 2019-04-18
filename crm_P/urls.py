@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.urls import path
 from stark.service.v1 import site
@@ -20,7 +21,10 @@ from web.views import account
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('stark/', site.urls),
+    url(r'^rbac/', include('rbac.urls', namespace='rbac')),
+
     path('login/', account.login, name='login'),
     path('logout/', account.logout, name='logout'),
     path('index/', account.index, name='index')

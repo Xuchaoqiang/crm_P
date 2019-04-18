@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load rbac %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'stark/css/commons.css' %} "/>
     <link rel="stylesheet" href="{% static 'stark/css/nav.css' %} "/>
     <link rel="stylesheet" href="{% static 'stark/css/search-group.css' %} "/>
+    <link rel="stylesheet" href="{% static 'rbac/css/rbac.css' %} "/>
     {% block css %}{% endblock %}
 </head>
 <body>
@@ -75,10 +77,11 @@
 <div class="pg-body">
     <div class="left-menu">
         <div class="menu-body">
-
+            {% multi_menu request %}
         </div>
     </div>
     <div class="right-body">
+        <div>{% breadcrumb request %}</div>
         {% block content %} {% endblock %}
     </div>
 </div>
@@ -88,6 +91,7 @@
 <script src="{% static 'stark/plugins/bootstrap/js/bootstrap.js' %} "></script>
 <script src="{% static 'stark/plugins/datetimepicker/js/bootstrap-datetimepicker.js' %} "></script>
 <script src="{% static 'stark/plugins/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js' %} "></script>
+<script src="{% static 'rbac/js/rbac.js' %} "></script>
 
 <script>
     $('.form_date').datetimepicker({

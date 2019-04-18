@@ -39,7 +39,7 @@ def get_datetime_text(title, field, format='%Y-%m-%d'):
     :return:
     """
 
-    def inner(self, obj=None, is_header=None):
+    def inner(self, obj=None, is_header=None, *args, **kwargs):
         if is_header:
             return title
         datetime_value = getattr(obj, field)
@@ -56,7 +56,7 @@ def get_m2m_text(title, field):
     :return:
     """
 
-    def inner(self, obj=None, is_header=None):
+    def inner(self, obj=None, is_header=None, *args, **kwargs):
         if is_header:
             return title
         queryset = getattr(obj, field).all()
@@ -211,7 +211,7 @@ class StarkHandler(object):
 
     list_display = []
 
-    def display_checkbox(self, obj=None, is_header=None):
+    def display_checkbox(self, obj=None, is_header=None, *args, **kwargs):
         """
         :param obj:
         :param is_header:

@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rbac.middlewares.rbac.RbacMiddleware',
 ]
 
 ROOT_URLCONF = 'crm_P.urls'
@@ -116,3 +117,27 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# #################### 权限配置 #####################
+RBAC_USER_MODLE_CLASS = "web.models.UserInfo"
+
+AUTO_DISCOVER_EXCLUDE = [
+    '/admin/.*',
+    '/login/',
+    '/logout/',
+    '/index/',
+]
+
+PERMISSION_SESSION_KEY = "luffy_permission_url_list_key"
+MENU_SESSION_KEY = "luffy_permission_menu_key"
+
+NO_PERMISSION_LIST = [
+    '/index/',
+    '/logout/',
+]
+
+# 白名单，无需登录就可以访问
+VALID_URL_LIST = [
+    '/login/',
+    '/admin/.*'
+]
