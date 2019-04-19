@@ -29,10 +29,15 @@ class UserInfoAddModelForm(StarkModelForm):
         return confirm_password
 
     def clean(self):
-
         password = self.cleaned_data.get('password')
         self.cleaned_data['password'] = gen_md5(password)
         return self.cleaned_data
+
+
+class UserInfoAddStudentModelForm(UserInfoAddModelForm, StarkModelForm):
+    class Meta:
+        model = models.UserInfo
+        fields = ['name', 'password', 'confirm_password', 'nickname', 'gender', 'phone', 'email']
 
 
 class UserInfoChangeModelForm(StarkModelForm):
@@ -101,9 +106,34 @@ class UserInfoHandler(PermissionHandler, StarkHandler):
             return redirect(self.reverse_list_url())
         return render(request, 'stark/change.html', {'form': form})
 
+    def student_add(self, request, *args, **kwargs):
+        """
+        添加学生账户视图函数
+        :param request:
+        :return:
+        """
+        if request.method == "GET":
+            form = UserInfoAddStudentModelForm()
+            return render(request, 'stark/change.html', {'form': form})
+        form = UserInfoAddStudentModelForm(request.POST)
+        if form.is_valid():
+            # 账户信息更新到数据库
+            self.save(request, form, False, *args, **kwargs)
+
+        return redirect('/stark/web/student/list/')
+
+    def save(self, request, form, is_update, *args, **kwargs):
+        form.instance.depart_id = 6
+        form.instance.user_id = 6
+        form.save()
+
     @property
     def get_reset_pwd_url_name(self):
         return self.get_url_name('reset_pwd')
+
+    @property
+    def get_student_add_url_name(self):
+        return self.get_url_name('student_add')
 
     def reverse_reset_pwd_url(self, *args, **kwargs):
         """
@@ -119,5 +149,6 @@ class UserInfoHandler(PermissionHandler, StarkHandler):
     def extra_urls(self):
         patterns = [
             url(r'^reset/password/(?P<pk>\d+)/$', self.wrapper(self.reset_password), name=self.get_reset_pwd_url_name),
+            url(r'^student/add/$', self.wrapper(self.student_add), name=self.get_student_add_url_name),
         ]
         return patterns

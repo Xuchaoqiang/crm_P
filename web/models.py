@@ -271,3 +271,11 @@ class StudyRecord(models.Model):
         ('leave_early', "早退"),
     ]
     record = models.CharField("上课记录", choices=record_choices, default='checked', max_length=64)
+
+
+class HomeworkRecord(models.Model):
+    """
+    学生作业管理
+    """
+    student = models.ForeignKey(verbose_name="学生", to='Student', on_delete=models.CASCADE)
+    classlist = models.ForeignKey(verbose_name="班级", to='ClassList', on_delete=models.CASCADE)
